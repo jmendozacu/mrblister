@@ -1,0 +1,101 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }
+?>
+
+<div class="category-title">
+    <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
+        <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
+    <?php endif; ?>
+         <h1><?php echo $_category->getName(); ?></h1>
+
+    <div class="row category-banner">
+        <div class="col-md-4">
+             <a href="../media/catalog/category/<?php echo $_category->getForWhiteImage(); ?>" download="<?php echo $_category->getName(); ?>"><img src="../media/catalog/category/<?php echo $_category->getForWhiteImage(); ?>" />
+            <?php if ($_category->getDownloadblePdf()) : ?>
+                <a href="..<?php echo $_category->getDownloadblePdf(); ?>" target="_blank"><span class="fa fa-arrow-circle-right"></span> Download the Cutter Guide</a>
+            <?php endif;?>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a onclick="javascript:void window.open('https://mr-blister.com/skin/frontend/gpmd/default/video/Virtuweld-Video.mp4','1488716709368','width=560,height=315,toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1,left=440,top=292.5');return false;" href="https://mr-blister.com/skin/frontend/gpmd/default/video/Virtuweld-Video.mp4"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/VIRTUWELD%20CTA.jpg" alt="" /></a>
+        </div>
+        <div class="col-md-4">
+            <a href="/contact/"><img src ="<?php echo $this->getSkinUrl('images/BULK ORDERS CTA.jpg');?>"/></a>
+        </div>
+    </div>    
+    <br style="clear: both;"/>
+    <?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    <?php endif; ?> 
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<?php //if($_imgUrl): ?>
+    <?php //echo $_imgHtml ?>
+<?php //endif; ?>
+
+
+<?php if($this->isContentMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+
+<?php elseif($this->isMixedMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+    <?php echo $this->getProductListHtml() ?>
+
+<?php else: ?>
+    <?php echo $this->getProductListHtml() ?>
+<?php endif; ?>
+<div class="container">
+        <div class="row">
+            <ul class="category row-boxes">
+                <li class="red">
+                    <a href="#"><h3>Can't See it? <span class="light-text">We are here to help >></span></h3></a>
+                </li>
+                <li class="blue">
+                    <a href="#"><h3>+44 (0)161 727 8404</h3></a>
+                </li>
+                <li class="darkblue">
+                    <a href="https://www.mr-blister.com/request-a-sample/"><h3 class="light">Request a sample</h3></a>
+                </li>
+            </ul> 
+        </div> 
+</div>

@@ -1,0 +1,15 @@
+
+trunk/includes/* 
+trunk/nbproject/*
+trunk/media/
+trunk/var/
+trunk/landing/images/ 
+trunk/errors/local.xml
+trunk/app/etc/local.xml
+trunk/sitemap.xml
+
+ 
+trunk/downloader/.cache
+trunk/downloader/cache.cfg
+trunk/downloader/connect.cfg
+

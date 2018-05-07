@@ -1,0 +1,105 @@
+<?php
+/**
+ *
+ * This file is part of the GPMD Magento Responsive Theme.
+ *
+ * The GPMD Magento Responsive Theme is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * The GPMD Magento Responsive Theme is distributed in the hope that it will
+ * be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+ * Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with the GPMD Magento Responsive Theme. If not, see
+ * http://www.gnu.org/licenses/.
+ *
+ * @category    GPMD
+ * @package     GPMD_Responsive_Theme
+ * @copyright   Copyright (c) 2012 GPMD.
+ * @author      Matt Bailey @GPMD LTD
+ */
+?>
+
+<!-- jumpToMenu link added -->
+<?php echo $this->getChildHtml('jumpToMenu') ?>
+<div class="bluebarwrap">
+    <div class="bluebar">
+        <div class="navitems">
+        <span class="bnumber">+44 (0)161 727 8404</span><span class="bemail"><a href="mailto:sales@mr-blister.com">sales@mr-blister.com</a></span><span class="bdelivery"><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>delivery-and-returns/">48 HOUR DELIVERY</a></span><span class="searcher"><?php echo $this->getChildHtml('topSearch') ?></span>
+        </div>
+        </div>
+    </div>
+<div class="header-container">
+    <div class="header">
+        <div class="verytop">
+            <ul>
+                <li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>">HOME</a></li>         
+                <li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>click-and-collect/">CLICK & COLLECT</a></li>  
+				<li><a href="<?php echo $this->getBaseUrl(); ?>bespoke-segments/">BESPOKE</a></li>
+                <!--<li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>catalogsearch/advanced/">PACK FINDER</a></li>-->  
+                <!--<li><a href="<?php //echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>bulk-discount/">BULK DISCOUNTS</a></li> --> 
+            </ul>
+        </div>
+        <?php if ($this->getIsHomePage()):?>
+        <h1 class="logo">
+            <!-- Hide unnecessary text -->
+            <?php //echo $this->getLogoAlt() ?>
+            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+            </a>
+        </h1>
+		<?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+            <!-- Hide unnecessary text -->
+            <?php //echo $this->getLogoAlt() ?>
+            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+        </a>
+        <?php endif?>
+		<div class="social" style="float:left;margin-left: 55px;margin-top: 15px;">
+                <ul style="list-style: none;">
+                    <li style="display: inline-block;"><a href="https://www.facebook.com/MisterBlisterLtd" class="face" target="_blank"></a></li>
+                    <li style="display: inline-block;"><a href="https://twitter.com/MrBlisterLtd" class="twit" target="_blank"></a></li>
+                    <li style="display: inline-block;"><a href="https://www.linkedin.com/company/mister-blister-ltd-" class="linked" target="_blank"></a></li>
+                </ul>
+            </div>
+			
+<!-- xmas
+			<table align="left" style="margin-left: -647px;margin-top: 90px;">
+  <tr>
+    <td style="width:75px;"><img src="http://www.mr-blister.com/media/xtree.png"></td>
+    <td align="left" valign="bottom"><p style="font-size: 21px;color: #D80000;font-family: 'chunkfiveroman',arial;margin-left: 5px;margin-bottom: 10px;">CHRISTMAS BUSINESS HOURS:</p>
+    <p style="font-size: 20px;color: #263773;font-family: 'chunkfiveroman',arial;margin-left: 5px;">We will close on the 23/12 at 2pm & will re-open 03/01, 2017 at 8am. <br />Please see DELIVERY category for more info.</p></td>
+  </tr>
+</table>
+-->
+
+
+        <div class="quick-access">
+            
+            <!--<p class="welcome-msg"><?php //echo $this->getWelcome() ?>--> <?php //echo $this->getAdditionalHtml() ?>
+            <?php echo $this->getChildHtml('store_language') ?>
+            <!--<div class="payments"><img src="<?php //echo $this->getSkinUrl('images/blister/payment.jpg') ?>" width="257"/></div>-->
+			
+			
+			
+            <div class="topy">
+			<div>
+				<img src="https://www.mr-blister.com/media/wysiwyg/virtuweld.jpg" alt="Virtuweld" style="width:60%; margin-top: -64px;"/> 
+			</div>
+                <div class="basklink"><a class="bas" href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>"></a></div>
+                <ul class="topycart">
+                <?php echo $this->getChildHtml('topCart')?>
+                <?php echo $this->getChildHtml('topLinks') ?>
+                </ul>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    </div>
+</div>
+
+
+<!-- topMenu moved to footer - see local.xml -->
+<?php echo $this->getChildHtml('topMenu') ?>

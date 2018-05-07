@@ -1,0 +1,163 @@
+<?php
+/**
+ *
+ * This file is part of the GPMD Magento Responsive Theme.
+ *
+ * The GPMD Magento Responsive Theme is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * The GPMD Magento Responsive Theme is distributed in the hope that it will
+ * be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+ * Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with the GPMD Magento Responsive Theme. If not, see
+ * http://www.gnu.org/licenses/.
+ *
+ * @category    GPMD
+ * @package     GPMD_Responsive_Theme
+ * @copyright   Copyright (c) 2012 GPMD.
+ * @author      Matt Bailey @GPMD LTD
+ */
+?>
+
+<!-- jumpToMenu link added -->
+<?php echo $this->getChildHtml('jumpToMenu') ?>
+<div class="topHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <?php echo $this->getChildHtml('topSearch') ?></span>
+            </div>
+            <div class="col-md-offset-3 col-md-7"> 
+                <div class="topMenu">
+                    <div class="login col-sm-2"><a href="<?php echo Mage::getUrl('customer/account/login'); ?>">Login</a></div>
+                    <div class="create-user col-sm-3">
+                            <div class="glyphicon glyphicon-user"></div>
+                            <a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Create Account</a>
+                    </div>
+                    <div class="mini-cart col-sm-4">
+                       <div class="col-sm-3 cart-icon"></div>
+                        <div class="col-sm-9"><?php echo $this->getChildHtml('topCart')?><br /><a href="<?php echo Mage::getUrl('checkout/cart'); ?>"><font color="white" style="font-size:12px;">View Your Basket &gt;</font></a></div> 
+                    </div>
+                    <div class="checkout col-sm-3"><a href="<?php echo Mage::getUrl('checkout/cart'); ?>">Checkout</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="bgcolor"></div>
+<div class="header-wrapper container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="logo">
+                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                    </a>
+							
+<!--
+							<table align="left" style="margin-left: -615px;margin-top: 90px;">
+  <tr>
+    <td><img src="http://www.mr-blister.com/media/xtree.png" style="width:75px"></td>
+    <td align="left"><p style="margin-left: 5px;font-size: 21px;color: #D80000;font-family:'oswaldbook';margin-top: 15px;">CHRISTMAS BUSINESS HOURS:</p>
+    <p style="font-size: 17px;color: #003360; font-family:'oswaldbook';margin-left: 5px;margin-top: -10px;">We will close on the 24/12 at 2pm & will re-open 04/01 at 8am. <br />Please see DELIVERY category for more info.</p></td>
+  </tr>
+</table>-->
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/MisterBlisterLtd" target="_blank"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/mrblisterltd" target="_blank"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                             <a href="https://www.linkedin.com/company/mister-blister-ltd-" target="_blank"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-navigation">
+            <div class="container">
+                <div class="row">
+                    <ul class="main-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/product-range/">Product Range</a></li>
+                        <li><a href="/virtuweld-technology/">Virtuweld Technology</a></li>
+                        <li><a href="/click-and-collect/">Click & Collect</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+						<li><a href="/news/">News</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+
+                     <div class="slider">
+                        <ul class="rslides">
+							 <!--<li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>all-packages.html"><img class="effect" src="<?php echo $this->getSkinUrl('images/blister/bf.jpg');?>"/></a></li>-->
+                             <li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>all-packages.html"><img class="effect" src="<?php echo $this->getSkinUrl('images/blister/New-Slider1.jpg');?>"/></a></li>
+                             <li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>all-packages.html"><img class="effect" src="<?php echo $this->getSkinUrl('images/blister/2.jpg');?>"/></a></li>
+							 <li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>all-packages.html"><img class="effect" src="<?php echo $this->getSkinUrl('images/blister/3.jpg');?>"/></a></li>
+							 <li><a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>all-packages.html"><img class="effect" src="<?php echo $this->getSkinUrl('images/blister/tray.jpg');?>"/></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+ <div class="clear"></div>
+<!-- topMenu moved to footer - see local.xml -->
+<?php //echo $this->getChildHtml('topMenu') ?>
+ <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/responsiveslides.js'); ?>"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery(".rslides").responsiveSlides({
+  auto: true,             // Boolean: Animate automatically, true or false
+  speed: 500,            // Integer: Speed of the transition, in milliseconds
+  timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+  pager: false,           // Boolean: Show pager, true or false
+  nav: false,             // Boolean: Show navigation, true or false
+  random: false,          // Boolean: Randomize the order of the slides, true or false
+  pause: false,           // Boolean: Pause on hover, true or false
+  pauseControls: false,   // Boolean: Pause when hovering controls, true or false
+  prevText: "Previous",   // String: Text for the "previous" button
+  nextText: "Next",       // String: Text for the "next" button
+  maxwidth: 1366,           // Integer: Max-width of the slideshow, in pixels
+  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+  manualControls: "",     // Selector: Declare custom pager navigation
+  namespace: "rslides",   // String: Change the default namespace used
+  before: function(){},   // Function: Before callback
+  after: function(){}     // Function: After callback
+         
+        });
+    
+        if(jQuery('.main-menu li a').hasClass('active')){
+            console.log(jQuery('.main-menu li a.active').parent());
+        	jQuery('.main-menu li a.active').parent().addClass('is-hover');
+        	jQuery('.main-menu li a.active').css({"backgroundColor":"#d12d26","color":"white"});
+        }
+    });  
+
+    jQuery(".main-menu li a").filter(function(){
+        return this.href == location.href.replace(/#.*/, "");
+    }).addClass("active");
+
+    </script>
+<!--     <script type="text/javascript">
+          jQuery('ul.main-menu li a').on('mouseover', function(e){
+            e.preventDefault();
+            jQuery(this).parent().addClass('is-hover');
+        }).on('mouseout', function(e){
+                e.preventDefault();
+            if(jQuery(this).hasClass('active')==false){
+                jQuery(this).parent().removeClass('is-hover');
+            }
+        });
+    </script> -->

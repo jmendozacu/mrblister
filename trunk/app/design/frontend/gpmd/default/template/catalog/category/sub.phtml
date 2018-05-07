@@ -1,0 +1,29 @@
+<?php
+$category = Mage::getSingleton('catalog/layer')->getCurrentCategory();
+$categories = $category->getCollection()
+                       ->addAttributeToSelect(array('name','image','description'))
+                       ->addIdFilter($category->getChildren())
+                       ->addAttributeToSort('position', 'asc')
+                       ->addAttributeToFilter('is_active', 1)
+?>
+<div class="pro-cats incat">
+<?php foreach ($categories as $category): ?>
+                    <div class="cat">
+                        <div class="catin">
+                        <a href="<?php echo $category->getUrl() ?>">
+                        <?php
+                             $imageSrc = NULL;
+                             $imageSrc = $category->getImage(); 
+                             if (empty($imageSrc)) 
+                                 {
+                                    $imageSrc = "def_2.jpg";
+                                 }
+                        ?>
+                        <img src="<?php echo Mage::getBaseUrl('media').'catalog'.DS.'category'.DS.$imageSrc ?>" alt="<?php echo $this->htmlEscape($category->getName()) ?>" />
+                        </a>
+                        <h3><a href="<?php echo $category->getUrl() ?>"><?php echo $category->getName() ?></a></h3>
+                        <?php echo $category->getDescription() ?>
+                    </div>
+                        <a class="link" href="<?php echo $category->getUrl() ?>">VIEW OPTIONS</a></div>
+                    <?php endforeach; ?>
+</div>

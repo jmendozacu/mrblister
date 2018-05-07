@@ -1,0 +1,111 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+<link href="<?php echo $this->getSkinUrl('css/responsiveslides.css'); ?>" rel="stylesheet" />
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<?php echo $this->getChildHtml('header') ?>
+<div class="main">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="container">
+        <div class="col-3 row">
+            <div class="col-md-4">
+				<a onclick="javascript:void window.open('https://mr-blister.com/skin/frontend/gpmd/default/video/Virtuweld-Video.mp4','1488716709368','width=560,height=315,toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1,left=440,top=292.5');return false;" href="https://mr-blister.com/skin/frontend/gpmd/default/video/Virtuweld-Video.mp4"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/mb-home1.jpg" alt="" /></a>
+				<a href="/product-range/"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/mb-home2.jpg" alt="" /></a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"><img src ="<?php echo $this->getSkinUrl('images/BULK ORDERS CTA.jpg');?>"/></a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"><img src ="<?php echo $this->getSkinUrl('images/48 HRS DELIVERY CTA.jpg');?>"></a>
+            </div>
+        </div>
+        <div class="col-3 row">
+             <div class="col-md-4">
+                 <h1>About Us</h1>
+                 <h3>Mister Blister® is one of the leading manufacturers of thermoformed blister packaging and blister packs in the UK.</h3>
+                 <p>We are an innovative Company and are always looking at new ways to improve our blister pack products to match the ever-changing requirements of our customers and keep one step ahead of our competitors.  </p>
+                 <br>
+				 <div class="readmore">
+                     <a href="/about/">Read More</a>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <h1>Services</h1>
+                 <h3>We know your order is important and we aim to get it there within 48 hours !</h3>
+                    
+					<ul>
+                        <li>Bespoke Manufacturers</li>
+                        <li>Click & Collect</li>
+                        <li>48 Hour Delivery Service</li>
+                        <li>Customised Insert Cards</li>
+                        <li>International Distribution</li>
+                        <li>Low Volume & Bulk Orders</li>
+                        <li>Dedicated Support Team</li>
+                        <li>Experienced Online Traders</li>
+                    </ul>
+					
+                 <div class="readmore">
+                     <a href="#">Read More</a>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                <ul class="row-boxes">
+                    <li class="red">
+                        <a href="#"><h3>Can't See it? <span class="light-text">We are here to help >></span></h3></a>
+                    </li>
+                    <li class="blue">
+                        <a href="#"><h3>+44 (0)161 727 8404</h3></a>
+                    </li>
+                    <li class="darkblue">
+                        <a href="/request-a-sample/"><h3 class="light">Request a sample</h3></a>
+                    </li>
+                    <li class="green">
+                        <a href="http://caterline.net" target="_blank"><h3>See Caterline.net <span class="light-text">for food packaging</span></h3></a>   
+                    </li>
+                </ul>
+             </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->getChildHtml('footer') ?>
+<?php echo $this->getChildHtml('global_cookie_notice') ?>
+<?php echo $this->getChildHtml('before_body_end') ?>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>
+
+ 
