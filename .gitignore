@@ -8,7 +8,7 @@ trunk/landing/images/
 trunk/errors/local.xml
 trunk/app/etc/local.xml
 trunk/sitemap.xml
-trunk/tmp
+trunk/tmp/
 trunk/tmp/*
 
  
