@@ -3,6 +3,7 @@ trunk/includes/*
 trunk/nbproject/*
 trunk/media/
 trunk/var/
+trunk/.htaccess
 trunk/landing/images/ 
 trunk/errors/local.xml
 trunk/app/etc/local.xml

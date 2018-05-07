@@ -1,0 +1,336 @@
+%s is required,%s es necesario
+%s: Edit Logic,%s: Editar Logic
+%s: New Logic,%s: Nuevo Logic
+(new copy),(nuevo copy)
+API,API
+Action,Acción
+Action to perform with target elements,Acción a realizar con los elementos de destino
+Acumen (theme matching template),Acumen (tema de plantilla)
+Add Field,Añadir campo
+Add Field - %s,Añadir campo - %s
+Add Field Set,Añadir Grupo de Campos
+Add Form,Añadir formulario
+Add Logic,Añadir Logic
+Add New Form,Añadir nuevo formulario
+Add custom stylization to the input element,Añadir estilización personalizada para el elemento de entrada
+Add header to the message,Agregar encabezado al mensaje
+"Add header with Store Group, IP and other information to the message","Añadir encabezado con el grupo de tienda, IP y otra información para el mensaje"
+Additional CSS classes for the input element,Clases CSS adicionales para el elemento de entrada
+Additional CSS style for the input element,Estilo CSS adicional para el elemento de entrada
+Adds web-form collected results to a page,Añade los resultados recogidos del formulario web en una página
+Adds web-form to a page,Añade el formulario web a una página 
+Admin notification template,Plantilla de notificación de administración
+Ajax,Ajax
+Ajax submission,Comunicación por Ajax (submission)
+Ajax upload,Carga por Ajax (uploads)
+All values should be checked,Todos los valores deben ser revisados
+Allow only latin characters in file names,Permitir sólo caracteres latinos en los nombres de archivos
+Always on,Siempre
+An error occurred during operation.,Se ha producido un error durante su funcionamiento.
+An error occurred while duplicating records.,Se produjo un error al duplicar registros.
+An error occurred while updating records.,Se ha producido un error al actualizar los registros.
+Any value can be checked,Algún valor debe comprobarse
+Approve,Aprobar
+Approve selected results?,¿Aprobar los resultados seleccionados?
+Approved,Aprobado
+Are you sure to delete selected elements?,¿Está seguro de borrar los elementos seleccionados?
+Are you sure to delete selected results?,¿Está seguro de borrar los resultados seleccionados?
+Are you sure to duplicate selected fields?,¿Está seguro de duplicar campos seleccionados?
+Are you sure to duplicate selected fieldsets?,¿Está seguro de duplicar los grupos de campos seleccionados?
+Are you sure to duplicate selected web-forms?,¿Está seguro de duplicar los formularios web seleccionados?
+Are you sure you want to delete the entire form and associated data?,¿Está seguro de que desea eliminar todo el formulario y los datos asociados?
+Auto (hidden for logged in customers),Automático (oculto para clientes conectados)
+Blackglass,Cristal Negro
+Block e-mail addresses,Bloquear direcciones de correo electrónico
+Block specified e-mail addresses from submission,Bloquear las direcciones de correo electrónico especificadas para el envío
+Captcha mode,Modo Captcha
+Change field set,Cambiar Grupo de Campos
+Change status,Cambiar estado
+Clean,Limpiar
+Code,Código
+Code is used to help identify this field in scripts,El código se utiliza para ayudar a identificar este campo en los scripts
+Code is used to help identify this web-form in scripts,El código se utiliza para ayudar a identificar este formulario web en scripts
+Comment,Comentario
+Condition,Condición
+Contacts,Contacto
+Contacts web-form,Formulario de contacto
+Convert newline characters to <br/> html tags when saving message,Convertir caracteres de salto de línea a <br/> etiquetas HTML al guardar mensajes
+Convert newlines to html tags,Convertir saltos de línea en etiquetas HTML
+Custom login redirect URL(Key) if user is not authorized,URL(Key) personalizada para inicio de sesión si el usuario no está autorizado
+Customer,Cliente
+Customer notification template,Plantilla de notificación al Cliente
+Date,Fecha
+Date / Time,Fecha / Hora
+Date Created,Fecha de creación
+Default,Predeterminado
+Default Values,Valores predeterminados
+Default e-mail address for notifications,Dirección de correo electrónico predeterminado para las notificaciones
+Default value is set in Forms Settings,El valor predeterminado se establece en la configuración de formularios
+Delete,Eliminar
+Delete File,Eliminar archivo
+Delete Form,Eliminar formulario
+Delete this message?,¿Eliminar este mensaje?
+Description,Descripción
+Design,Diseño
+Disapprove,Desaprobar
+Disapprove selected results?,¿Desaprobar los resultados seleccionados?
+Display,Mostrar
+Display field,Mostrar campo
+Display field in result / notification messages,Mostrar el campo en los resultados / mensajes de notificación
+Display fieldset name in result / notification messages,Mostrar nombre grupo de campos en el resultado / mensajes de notificación
+Display in menu,Mostrar en el menú
+Displayed error message text if regex validation fails,Se muestra el texto del mensaje de error si la validación RegEx falla
+Duplicate,Duplicar
+Duplicate Form,Duplicar formulario
+Duplicate results by e-mail to customer,Enviar los resultados por correo electrónico a los clientes
+Dutch,Holandés
+E-mail Settings,Configuración de correo electrónico
+E-mail address is blocked: %s,La dirección de correo electrónico está bloqueada: %s
+E-mail could not be sent!,El correo electrónico no se ha podido enviar!
+E-mail has been sent.,El correo electrónico ha sido enviado.
+E-mail template for admin notification letters,Plantilla de correo electrónico para las cartas de notificación de administración
+E-mail template for customers notification letters,Plantilla de correo electrónico para las cartas de notificación de clientes
+E-mail template for replies,Plantilla de correo electrónico para las respuestas
+E-mail this message?,¿Enviar este mensaje?
+E-mail thumbnail height,Altura de la miniatura para correo electrónico
+E-mail thumbnail width,Ancho de la miniatura para correo electrónico
+E-mailed,Enviado por email
+Edit '%s' Field - %s,Editar '%s' Campo - %s
+Edit Field Set,Editar Grupo de Campos
+Edit Field Set '%s',Editar Grupo de Campos '%s'
+Edit Form,Editar formulario
+Edit Quick Response '%s',Editar Respuesta Rápida '%s'
+Edit Result,Editar Resultado
+Enable,Habilitar
+Enable approval,Habilitar la aprobación
+Enable approval of results,Habilitar la aprobación de los resultados
+Enable cache,Habilitar caché
+Enable instant file upload with progress and preview<br/>Listed folders should have write permissions:<br/><i>/js/webforms/upload/files<br/>/js/webforms/upload/thumbnails</i>,Habilitar carga rápida de archivos con progreso y vista previa<br/>Asegúrese que las carpetas siguientes dispongan de permisos de escritura:<br/><i>/js/webforms/upload/files<br/>/js/webforms/upload/thumbnails</i>
+English,Inglés
+Enter your license serial number here,Introduzca su número de serie de la licencia aquí
+Equal,Igual
+Error duplicating web-form,Error duplicando el formulario web
+Expand,Expandir
+Field Information,Información del campo
+Field Set,Grupo de Campos
+Field Sets,Grupos de Campos
+Field does not exist,El campo no existe
+Field name display length,Longitud de visualización del nombre del campo
+Field position in the form relative to field set,Posición del campo en el formulario relativa al grupo de campos
+Field set,Grupo de Campos
+Field value(s),Valor(es) del campo
+Field was successfully deleted,El campo se ha eliminado correctamente
+Field was successfully saved,El campo se ha guardado correctamente
+Fields,Campos
+Fieldset does not exist,El grupo de campos no existe
+Fieldset position in the form,Posición del grupo de campos en el formulario
+Fieldset was successfully deleted,El grupo de campos se ha eliminado correctamente
+Fieldset was successfully saved,El grupo de campos se ha guardado correctamente
+File Upload,Carga de archivo
+Files Settings,Configuración de archivos
+Files upload limit,Límite de subida de archivos
+Focus on web-form,Enfoque en formulario web
+Form Information,Formulario de información
+Forms will be submitted without page reloading,Los formularios se enviarán sin recargar la página
+French,Francés
+Frontend Template,Plantilla del interfaz
+General Settings,Configuración general
+German,Alemán
+Grid thumbnail height,Alto de la miniatura en parrilla
+Grid thumbnail width,Ancho de la miniatura en parrilla
+Guest,Invitado
+HTML Editor,Editor de HTML
+Hidden,Oculto
+Hide,Ocutar
+Hint,Sugerencia
+Hint message will appear in the input and disappear on the focus,El mensaje de sugerencia aparecerá en la entrada y desaparecerá en el foco
+Html Block,Bloque Html
+IP,IP
+If assigned field set is not active the field won`t be displayed,Si el grupo de campos asignado no está activo el campo no se mostrará
+If empty default notification e-mail address will be used. You can set multiple addresses comma-separated,"Si se deja vacío, se utilizará email de notificación predeterminado. Puede establecer diferentes direcciones de correo electrónico separadas por comas"
+"If you have Select/Contact field in the form, e-mail notification will be sent twice: to admin and to selected contact","Si marca el campo Seleccion/Contacto en el formulario, la notificación por email se enviará doble: al administrador y al contacto seleccionado"
+Image Upload,Cargar imagen
+Images,Imágenes
+Images Settings,Configuración de imágenes
+Images upload limit,Límite de subida de imágenes
+In case you have problems receiving notifications this e-mail address should be set to your mailbox used for sending out system e-mails. It doesn't affect reply-to values(except Gmail web-interface which has issues with it).,En caso de tener problemas para recibir notificaciones de este e-mail se debe especificar su buzón de correo utilizado para enviar mensajes de correo electrónico del sistema. No afecta a la respuesta de los valores (excepto en Gmail que puede tener problemas con ella).
+In order for reCaptcha to work please enter valid public and private keys. You can get those by visiting <a href='http://www.google.com/recaptcha/whyrecaptcha' target='_blank'>this page</a>,Para trabajar con reCaptcha introduzca las claves públicas y privadas válidas. Puede obtenerlas visitando <a href='http://www.google.com/recaptcha/whyrecaptcha' target='_blank'>esta página</a>
+Incorrect serial number.,Número de serie incorrecto.
+Information,Información
+Language,Idioma
+Last Modified,Última modificación
+Last Result,Último resultado
+Legacy (Magento 1.3 and earlier),Legado (Magento 1.3 y anterior)
+License,Licencia
+License is active.,La licencia está activa.
+License serial number for WebForms Professional Edition is missing.,Falta el número de serie de licencia de WebForms Edición Professional.
+Load,Cargar
+Load jQuery,Cargar jQuery
+Load jQuery library required by Ajax uploader. Disable if your theme is already using jQuery.,Cargar la libreria jQuery para utilizar el Ajax uploader. Desactivar si el tema ya está usando jQuery.
+Logic,Lógica
+Logic Rule,Regla lógica
+Logic aggregation,Agregación de la lógica
+Logic was successfully deleted,La lógica se ha eliminado correctamente
+Logic was successfully saved,La lógica se ha guardado correctamente
+Login redirect URL,URL de redirección para Inicio de Sesión
+Manage Forms,Administrar Formularios
+Manage Quick Responses,Administrar Respuestas Rápidas
+Maximum length,Longitud máxima
+Maximum upload file size in kB,Tamaño de carga máxima de archivo en Kb
+Maximum upload image size in kB,Tamaño de carga máxima de imágen en Kb
+Message,Mensaje
+Messages History,Histórico de mensajes
+Minimum length,Longitud mínima
+Mode,Modo
+NOT equal,NO igual
+Name,Nombre
+New Field Set,Nuevo Grupo de Campos
+New Quick Response,Nueva Respuesta Rápida
+Newer,Más nuevo
+Not E-mailed,No enviado por email
+Notification e-mail address,Dirección de correo electrónico de notificación
+Off,Deshabilitado
+Older,Más antiguo
+On,Habilitado
+Please select quick response from the list,Por favor seleccione la respuesta rápida de la lista
+"Please, don`t reply to this e-mail!","¡Por favor, no responda a este mensaje!"
+"Please, enter serial number.","Por favor, introduzca el número de serie."
+Portuguese,Portugués
+Position,Posición
+Preview template,Ver plantilla
+Private key,Clave privada
+Public key,Clave pública
+Quick Response,Respuesta Rápida
+Quick response,Respuesta rápida
+Quick response was successfully deleted,La Respuesta Rápida se ha eliminado correctamente
+Quick response was successfully saved,La Respuesta Rápida se ha guardado correctamente
+Red,Rojo
+Redirect URL,Redirección de URL
+Redirect to specified url after successful submission,Reenviar a la URL especificada después del envío exitoso
+Registered customers only,Sólo para clientes registrados
+Replace default Magento contacts page (yourdomain.com/contacts) with the preferred web-form,Reemplace la página de contactos por defecto de Magento (su-dominio.com/contacts) con su formulario web personalizado
+Reply,Responder
+Reply template,Plantilla de respuesta
+Reply to selected results?,¿Responder a los resultados seleccionados?
+Reply-to e-mail address for customer,Responder a esta dirección de email para el cliente
+Required,Necesario
+Result # %s,Resultado # %s
+Result # %s | %s,Resultado # %s | %s
+Result Date,Resulta Date
+Result label,Etiqueta de resultado
+Result label will be used on results page,Etiqueta que puede utilizar en la página de resultados
+Result was successfully deleted,El resultado ha sido eliminado correctamente
+Result was successfully saved,El resultado se ha guardado correctamente
+Results,Resultados
+Results / Notifications,Resultados / Notificaciones
+Results per page,Resultados por página
+Russian,Ruso
+Save Reply,Guardar respuesta
+Save Reply And E-mail,Guardar y Enviar respuesta
+Scroll to success message,Desplácese hasta mensaje de confirmación
+Scroll to the top of success message after form submission,Desplácese hasta la parte superior del mensaje de confirmación tras el envío de formularios
+Select,Seleccionar
+Select / Checkbox,Seleccionar / Casilla de verificación
+Select / Contact,Seleccionar / Contacto
+Select / Radio,Seleccionar / Botónes de selección
+Select default template for the form preview,Seleccionar plantilla predeterminada para el formulario de vista previa
+Select one or multiple target elements,Seleccione uno o varios elementos de destino
+"Select one or multiple trigger values.<br>Please, configure for each locale <b>Store View</b>.","Seleccione uno o varios valores.<br>Por favor, configure para cada entorno de <b>Vista de Tienda</b>."
+"Select values should be separated with new line (start with ^ to check default).<br />Default values: <i>{{firstname}}, {{lastname}}, {{email}} etc</i> - logged in customer information<br/>Select/Contact values format:<br/><i>Name <mailbox@mysite.com></i>","Seleccione los valores que deberán estar separados con la nueva línea (empezar con ^ para marcar el predetrminado).<br />Valores predeterminados: <i>{{firstname}}, {{lastname}}, {{email}} etc</i> - información de cliente registrado<br/>formato de valores Seleccionar/Contacto:<br/><i>Nombre <email@mi-dominio.com></i>"
+Select web-form to replace default contacts page,Seleccione el formulario web para reemplazar página de contactos predeterminada
+Selected Result(s),Resultado(s) seleccionado(s)
+Selected result has no reply-to address!,El resultado seleccionado no tiene dirección de respuesta!
+Send E-mail,Enviar correo electrónico
+Send all e-mails from this address,Enviar todos los emails de esta dirección
+Send by e-mail,Enviar por correo electrónico
+Send results by e-mail to admin,Enviar los resultados por email al administrador
+Send selected results by e-mail?,¿Enviar los resultados seleccionados por email?
+Sending...,Enviando...
+Sent from IP,Enviado desde la IP
+Set text for the submit button of the form. If empty the default value &quot;Submit&quot; will be used,"Establezca el texto para el botón de envío del formulario. Si está vacío, será usado el valor &quot;Submit&quot; como predeterminado"
+Settings,Configuración
+Show,Mostrar
+Show web-form in admin backend menu,Mostrar formulario web en el menú de administrador de contenidos:
+Size,Tamaño
+Spanish,Español
+Standard,Standard
+Standard - two neighbour fields will be merged in one row<br />Wide - field will be wide and single in a row,Standard - dos campos por fila<br />Ancho - el campo se mostrará en todo el ancho
+Star Rating,Clasificación de estrellas
+Status,Estado
+Store,Tienda
+Store View,Vista de tienda
+Store group,Grupo de tiendas
+Store name,Nombre de tienda
+Submit button text,Texto del botón de envío
+Success text,Texto de confirmación
+Survey mode,Modo encuesta
+Survey mode allows filling up the form only one time,El modo encuesta permite cumplimentar el formulario de una sola vez
+Target element(s),Elemento(s) destino
+Text,Texto
+Text / E-mail,Texto / Email
+Text / Number,Texto / Número
+Text / URL,Texto / URL
+Textarea,Area de texto
+Theme,Tema
+This address will be used by default to send you new results notifications. You can set multiple addresses comma-separated,Esta dirección se utilizará para enviarle notificaciones de nuevos resultados. Puede configurar varias direcciones separadas por comas
+This address will be used in reply-to field in customer notification,Esta dirección se utilizará para el campo respuesta en la notificación al cliente
+This field will be used as a subject in notification e-mail,Este campo se utilizará como asunto en la notificación por correo electrónico
+This text will appear under the form name,Este texto aparecerá bajo el nombre del formulario
+This text will appear under the input field,Este texto aparecerá bajo el campo de entrada
+This text will be displayed after the form completion,Este texto se mostrará después de completar el formulario
+This will limit long field names in results table. It doesn't affect export,Esto limitará la longitud de los nombres de campo en la tabla de resultados. Esto no afecta a la exportación
+Thumbnail height in e-mail notifications,Alto de la miniatura para las notificaciones por email
+Thumbnail height in results grid,Alto de la miniatura en la parrilla de resultados
+Thumbnail width in e-mail notifications,Ancho de la miniatura para las notificaciones por email
+Thumbnail width in results grid,Ancho de la miniatura en la parrilla de resultados
+Title,Título
+Total of %d record(s) have been deleted.,Un total de %d registro(s) se han borrado.
+Total of %d record(s) have been duplicated.,Un total de %d registro(s) se han duplicado.
+Total of %d record(s) have been updated.,Un total de %d registros(s) se han actualizado.
+Total of %d reply(s) has been emailed.,Un total de %d respuestas(s) se han enviado.
+Total of %d reply(s) has been saved.,Un total de %d respuestas(s) se han guardado.
+Total of %d result(s) has no reply-to e-mail address.,Un total de %d resultado(s) no tienen dirección de respuesta.
+Total of %d result(s) have been emailed.,Total of %d resultado(s) se han enviado.
+Total of %d result(s) have been updated.,Total of %d resultado(s) se han actualizado.
+Trigger value(s),Valore(s) de activación
+Turkish,Turco
+Type,Tipo
+Ultimento (theme matching template),Ultimento (tema de plantilla coincidente)
+Unexpected error,Error inesperado
+Unsupported image compression: %s,Compresión de la imagen no compatible: %s
+Upload limit,Limite de subida
+Uploaded file %s (%s kB) exceeds allowed limit: %s kB,El archivo cargado %s (%s kB) ha excedido el limite permitido: %s kB
+Uploaded file %s has non-latin characters in the name,El archivo cargado %s tiene caracteres no latinos en el nombre
+Uploaded file %s has none of allowed extensions: %s,El archivo cargado %s no tiene ninguna de las extensiones permitidas: %s
+Uploaded image %s (%s kB) exceeds allowed limit: %s kB,La imagen cargada %s (%s kB) ha excedido el limite permitido: %s kB
+Use Magento translations,Utilice traducciones Magento
+Use Magento translations to automatically translate forms in frontend,Utilice las traducciones de Magento para traducir automáticamente los formularios en el interfaz
+Use as e-mail subject,Utilice como asunto del correo electrónico
+Validate file names,Validar los nombres de archivo
+Validate with custom regular expression,Validar con una expresión regular personalizada
+Validation,Validación
+Validation RegEx,Validación RegEx
+Validation error message,Mensaje de error de validación
+Value only,Valor único
+Verification code was not correct. Please try again.,"Código de verificación no correcto. Por favor, vuelva a intentarlo."
+Web-form,Web-form
+Web-form '%s' submitted,Formulario web '%s' enviado
+Web-form does not exist,El formulario web no existe
+Web-form is not active.,El formulario web no esta activo.
+Web-form is not available for direct access.,El formulario web no está disponible para el acceso directo.
+Web-form was successfully deleted,El formulario web se ha eliminado correctamente
+Web-form was successfully duplicated,El formulario web se ha duplicado correctamente
+Web-form was successfully saved,El formulario web se ha guardado correctamente
+Web-forms,Web-forms
+Web-forms Module,Modulo Web-forms
+Web-forms Settings,Configuración de Web-forms
+Web-forms Settings Configuration,Opciones de configuración de Web-forms
+Web-forms: Form,Web-forms: Formulario
+Web-forms: Results,Web-forms: Resultados
+WebForms Professional Edition license number is not valid for store domain.,El número de licencia de WebForms Edición Profesional no es válido para este dominio/tienda.
+White,Blanco
+Wide,Ancho
+You can use it for additional field validation (see Prototype validation classes),Se puede utilizar para campo de validación adicional (ver las clases de validación Prototipo)
+You have submitted '%s' form on %s website,Ha enviado el formulario '%s' desde %s
+reCaptcha Settings,Configuración de reCaptcha
+Phone Number,Tel�fono

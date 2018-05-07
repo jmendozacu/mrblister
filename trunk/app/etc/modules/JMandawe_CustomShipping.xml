@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JMandawe_CustomShipping>
+            <active>true</active>
+            <codePool>local</codePool>
+        </JMandawe_CustomShipping>
+    </modules>
+</config>

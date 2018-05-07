@@ -1,0 +1,233 @@
+/* Reset ================================================================================= */
+	* {
+	  margin: 0;
+	  padding: 0;
+	}
+	body {
+	  font-size: 14px;
+	}
+	img {
+	  border: 0;
+	  vertical-align: top;
+	}
+	a:hover {
+	  text-decoration: none;
+	  color: @activeColor;
+	}
+	a:focus {
+	  outline: 0; text-decoration: none;
+	  color: @activeColor;
+	}
+	/* Headings */
+	h2{font-size: 160%}
+	h3{font-size: 140%}
+	h4{font-size: 120%}
+	h5,h6{font-size: 110%}
+	/* Forms */
+	form {
+	  display: inline;
+	}
+	fieldset {
+	  border: 0;
+	}
+	legend {
+	  display: none;
+	}
+	/* Table */
+	table {
+	  border: 0; 
+	  border-spacing: 0;
+	  empty-cells: show;
+	  font-size: 100%;
+	}
+	caption,
+	th,
+	td {
+	  vertical-align: top;
+	  text-align: left;
+	  font-weight: normal;
+	}
+	/* Content */
+	p {
+	  margin: 0 0 10px;
+	}
+	strong {
+	  font-weight: 600 !important;
+	}
+	address {
+	  font-style: normal;
+	  line-height: 1.35;
+	}
+	cite {
+	  font-style: normal;
+	}
+	q,
+	blockquote {
+	  quotes: none;
+	}
+	q:before,
+	q:after {
+	  content: '';
+	}
+	small,
+	big {
+	  font-size: 1em;
+	}
+	/*sup           { font-size:1em; vertical-align:top; }*/
+	/* Lists */
+	ul,
+	ol {
+	  list-style: none;
+	  margin: 0;
+	}
+	/* Tools */
+	.hidden {
+	  display: block !important;
+	  border: 0 !important;
+	  margin: 0 !important;
+	  padding: 0 !important;
+	  font-size: 0 !important;
+	  line-height: 0 !important;
+	  width: 0 !important;
+	  height: 0 !important;
+	  overflow: hidden !important;
+	}
+	.nobr {
+	  white-space: nowrap !important;
+	}
+	.wrap {
+	  white-space: normal !important;
+	}
+	.a-left {
+	  text-align: left !important;
+	}
+	.a-center {
+	  text-align: center !important;
+	}
+	.a-right {
+	  text-align: right !important;
+	}
+	.v-top {
+	  vertical-align: top;
+	}
+	.v-middle {
+	  vertical-align: middle;
+	}
+	.f-left,
+	.left {
+	  float: left !important;
+	}
+	.f-right,
+	.right {
+	  float: right !important;
+	}
+	.f-none {
+	  float: none !important;
+	}
+
+	.no-display {
+	  display: none;
+	}
+	.no-margin {
+	  margin: 0 !important;
+	}
+	.no-padding {
+	  padding: 0 !important;
+	}
+	.no-bg {
+	  background: none !important;
+	}
+	body.page-popup{
+	  font-size: 12px;
+	  padding: 20px 30px 30px;
+	  .page-title{
+	    &.category-title{ 
+	      margin-top: 0;
+	      > *{ font-size: 133.33%; text-transform: uppercase; color: #333; display: none;}
+	    }
+	    h1{float: left;font-weight: normal; margin-top: 0px;
+	      text-transform: uppercase; 
+	    }
+	    .link-print {
+	      background: url("../images/i_print.gif") 0 2px no-repeat;
+	      padding: 0 0 0 25px; margin: 10px 0 0; float: right;
+	    }
+	  }
+	  .data-table thead th,
+	  .data-table tbody th {
+	    background: #CCC; padding-left: 10px; padding-right: 10px;
+	  }
+	  .compare-table{
+	    td{vertical-align: top;
+	      button{margin: 0 0;}
+	    }
+	    thead{
+	      th,td{padding-top: 5px; padding-bottom: 0; text-align: center;}
+	    }
+	  }
+	  .product-name{line-height: normal; margin-bottom: 10px;}
+	  .ratings{ display: inline-block;}
+	  .ratings,
+	  .price-box{ text-align: center; display: inline-block; float: none; 
+	    .old-price,.special-price,.regular-price{
+	      float: none; display: inline-block;
+	    }
+	    .price{ font-size: 183.33%; }
+	  }
+	  .ratings .amount{ margin: -2px 0 0 20px; float: left;}
+	  .add-to-links{list-style: none; margin: 0 0; text-align: center;}
+	  .product-shop-row td,
+	  .add-to-row td{text-align: center;}
+	}
+	/* Global Styles ========================================================================= */
+	/* Form Elements */
+	button,
+	/*input,*/
+	select, 
+	textarea, 
+	input[type="text"], 
+	input[type="password"], 
+	input[type="datetime"], 
+	input[type="datetime-local"], 
+	input[type="date"], 
+	input[type="month"], 
+	input[type="time"], 
+	input[type="week"], 
+	input[type="number"], 
+	input[type="email"], 
+	input[type="url"], 
+	input[type="search"], 
+	input[type="tel"], 
+	input[type="color"],
+	.uneditable-input{
+	  font-size: 100%; 
+	  border: 1px solid #ccc;
+	  margin-bottom: 9px;
+	  /*-webkit-appearance: none;*/
+	  outline: 0;
+	}
+	input[type="text"],textarea,input[type="password"]{
+	  -webkit-appearance: none;
+	}  
+	textarea:focus, 
+	input[type="text"]:focus, 
+	input[type="password"]:focus, 
+	input[type="datetime"]:focus, 
+	input[type="datetime-local"]:focus, 
+	input[type="date"]:focus, 
+	input[type="month"]:focus, 
+	input[type="time"]:focus, 
+	input[type="week"]:focus, 
+	input[type="number"]:focus, 
+	input[type="email"]:focus, 
+	input[type="url"]:focus, 
+	input[type="search"]:focus, 
+	input[type="tel"]:focus, 
+	input[type="color"]:focus, 
+	.uneditable-input:focus {   
+	    outline: 0;
+	}
+	input[type="radio"]:focus,
+	input[type="checkbox"]:focus{
+	  outline: 0;
+	}

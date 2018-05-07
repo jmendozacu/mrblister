@@ -1,0 +1,141 @@
+/*------------------------------------
+* Product Video Extention
+* Author  CMSMart Team
+* Copyright Copyright (C) 2012 http://cmsmart.net. All Rights Reserved.
+* @license - http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+* Websites: http://cmsmart.net
+* Email: team@cmsmart.net
+* Technical Support: http://cmsmart.net/support_ticket/
+* Forum - http://cmsmart.net/forum
+-----------------------------------------------------*/
+#upload_video{
+	float: left;
+	margin-right: 5px;
+	width: 100%;
+	cursor: pointer;
+	margin-top: 25px;
+}
+
+.title_upload {
+    font-weight: bold;
+}
+
+#video_file_block,  #video_url_field, #video_title_field, #video_type_upload_file,
+#video_comment_field, #author_name_field, #author_email_field, #video_type_upload_link{
+	margin-top: 10px;
+}
+.btn_send_video {
+	float: left;
+    margin-top: 15px !important;
+}
+
+
+#star ul.star {
+    background: rgba(0, 0, 0, 0) url("../images/stars.gif") repeat-x scroll 0 0;
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    left: 0;
+    line-height: 21px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -5px;
+    width: 85px;
+}
+
+#star div.user {
+    color: #888;
+    float: left;
+    font-family: Arial;
+    font-size: 13px;
+    left: 15px;
+    position: relative;
+}
+
+#star li.curr {
+    background: rgba(0, 0, 0, 0) url("../images/stars.gif") repeat scroll left 25px;
+    font-size: 1px;
+}
+
+#star li {
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 21px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-decoration: none;
+    text-indent: -9000px;
+    width: 85px;
+    z-index: 20;
+}
+#star {
+    float: right;
+}
+
+
+.upload-video-write_review-table-row {
+    float: right;
+	margin-right: 25px;
+    margin-top: 10px;
+}
+
+
+.lab_rate {
+    margin-right: 10px;
+}
+
+#nb_prevStaticLink  {
+    background: rgba(0, 0, 0, 0) url("images/previous1.gif") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 26px;
+    left: 55px;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: absolute;
+    top: 50%;
+    width: 26px;
+}
+
+#nb_nextStaticLink {
+	background: rgba(0, 0, 0, 0) url("images/next1.gif") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 26px;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 26px;
+}
+#nb_prevStaticLink:hover {
+	background: rgba(0, 0, 0, 0) url("images/previous2.gif") no-repeat scroll 0 0;
+}
+#nb_nextStaticLink:hover {
+	background: rgba(0, 0, 0, 0) url("images/next2.gif") no-repeat scroll 0 0;
+}
+
+#nb_prevImageStaticLink:hover {
+	background: rgba(0, 0, 0, 0) url("images/previous2.gif") no-repeat scroll 0 0;
+}
+
+#nb_nextImageStaticLink:hover {
+	background: rgba(0, 0, 0, 0) url("images/next2.gif") no-repeat scroll 0 0;
+}
+
+.video_rating_star{
+	float: right;
+    margin-right: 25px;
+    margin-top: 8px;
+}
+
+.style_popup {
+    margin-top: 9px;
+}
+
+.style_04 {
+    margin-top: 3px;
+}

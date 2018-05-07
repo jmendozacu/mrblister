@@ -1,0 +1,5 @@
+[23-Sep-2014 13:59:21 UTC] PHP Warning:  require_once(app/Mage.php): failed to open stream: No such file or directory in /home/mrblister/public_html/custom/add_category_attribute.php on line 3
+[23-Sep-2014 13:59:21 UTC] PHP Fatal error:  require_once(): Failed opening required 'app/Mage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/mrblister/public_html/custom/add_category_attribute.php on line 3
+[23-Sep-2014 14:02:38 UTC] PHP Fatal error:  Call to undefined method Mage_Sales_Model_Mysql4_Setup::updateAttributes() in /home/mrblister/public_html/custom/add_category_attribute.php on line 23
+[22-Feb-2015 07:07:52 UTC] PHP Warning:  require_once(app/Mage.php): failed to open stream: No such file or directory in /home/mrblister/public_html/custom/tier_price_export.php on line 3
+[22-Feb-2015 07:07:52 UTC] PHP Fatal error:  require_once(): Failed opening required 'app/Mage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/mrblister/public_html/custom/tier_price_export.php on line 3
