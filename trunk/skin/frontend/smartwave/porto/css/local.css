@@ -1945,7 +1945,7 @@ p.tall{color:#777;line-height:24px;margin:0 0 20px;font-size:14px}
 .date-absolute-type .recent-posts .postTitle h2{font-size:18px;line-height:18px}
 .date-absolute-type .recent-posts .postContent{font-size:13px;padding-bottom:0}
 .date-absolute-type .recent-posts a.readmore{font-size:10px;text-transform:uppercase;display:inline-block;margin-top:10px}
-#slideshow img{max-width:100%;height:auto}
+#slideshow img{max-width:100%;height:auto;width:100%;}
 h2.short{font-size:2.6em;font-weight:300;line-height:42px;margin:0 0 32px}
 .true-color{color:#08c}
 .italic{font-style:italic}
