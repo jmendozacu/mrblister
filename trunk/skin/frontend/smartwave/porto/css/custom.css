@@ -1,3 +1,32 @@
+/**/
+.arrow-wrapper
+{
+  background: #022358;
+    display: block;
+    width: 35px;
+    float: right;
+    height: 35px;
+}
+.arrow {
+    width: 11px;
+    height: 11px;
+    border-top: 3px solid #FFF;
+    border-right: 3px solid #FFF;
+    margin-top: 6px;
+    margin-right: 8px;
+    float: right;
+}
+.right {
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)";
+    margin-top: 11px;
+    margin-right: 15px;
+}
+/*---*/
+
 .owl-top-narrow #category-slider-demo-7 .owl-controls{right:-2px}
 .header .demo-tooltip,.footer .demo-tooltip{position:absolute;right:15px;top:5px;z-index:9;width:20px}
 .header-container.sticky-header .header .demo-tooltip{display:none}
