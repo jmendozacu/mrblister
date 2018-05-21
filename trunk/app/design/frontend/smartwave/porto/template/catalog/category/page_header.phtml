@@ -3,19 +3,33 @@
     $_category  = Mage::registry('current_category');
     $store = Mage::app()->getStore();
     $code  = $store->getCode();
-    if($_description=$_category->getDescription()){
-        if(Mage::getStoreConfig("porto_settings/category/fullwidth_description",$code)){
+    $media_dir = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+    $full_media_url = $media_dir.'catalog/category/'.$_category->getForWhiteImage();
 ?>
-<div class="category-banner">
-<?php
-        echo $_helper->categoryAttribute($_category, $_description, 'description');
-?>
-</div>
-<?php
-        }
-    }else if(Mage::getStoreConfig("porto_settings/header/type",$code) == "10" || Mage::getStoreConfig("porto_settings/header/type",$code) == "17" || Mage::getStoreConfig("porto_settings/header/type",$code) == "22"){
-?>
-<div class="page-header">&nbsp;</div>
-<?php
-    }
-?>
+<?php if($_description=$_category->getDescription()) : ?>
+    <?php  if(Mage::getStoreConfig("porto_settings/category/fullwidth_description",$code)) : ?>
+        <div class="container category-banner">
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="category_header_image" href="<?php echo  $full_media_url ; ?>" download="<?php echo $_category->getName(); ?>">
+                        <img src="<?php echo $full_media_url;?>" class="banner-image"/>
+                    </a>
+                    <?php if ($_category->getDownloadblePdf()) : ?>
+                        <a href="<?php echo $_category->getDownloadblePdf(); ?>" target="_blank"><span class="fa fa-arrow-circle-right"></span> <?php echo $this->__('Download the Cutter Guide');?></a>
+                    <?php endif;?>
+                </div>
+                <div class="col-md-4">
+                    <a class="category_header_image" onclick="javascript:void window.open('<?php echo $this->getSkinUrl('videos/virtuweld-video.mp4');?>','1488716709368','width=560,height=315,toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1,left=440,top=292.5');return false;" href="<?php echo $this->getSkinUrl('images/bulk_orders_cta.jpg');?>">
+                        <img class="banner-image" src="<?php echo $this->getSkinUrl('images/virtuweld_cta.jpg');?>" alt="" />
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/contact/" class="category_header_image"><img class="banner-image" src ="<?php echo $this->getSkinUrl('images/bulk_orders_cta.jpg');?>"/></a>
+                </div>
+            </div>
+            <?php //echo $_helper->categoryAttribute($_category, $_description, 'description'); ?>
+        </div>
+    <?php elseif(Mage::getStoreConfig("porto_settings/header/type",$code) == "10" || Mage::getStoreConfig("porto_settings/header/type",$code) == "17" || Mage::getStoreConfig("porto_settings/header/type",$code) == "22") :?>    
+        <div class="page-header">&nbsp;</div>
+    <?php endif;?>
+<?php endif;?>    
