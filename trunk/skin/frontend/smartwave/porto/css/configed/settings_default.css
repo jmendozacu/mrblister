@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2018-05-07 09:03:02 */
+ * 2018-05-25 14:36:33 */
 
 .btn-default:hover, .btn-default:focus {
     background-color: #161616;
@@ -29,7 +29,7 @@
 }
 h2.filter-title {
     background: none;
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 400;
@@ -74,7 +74,7 @@ h2.filter-title {
 .ratings {background: none;margin: 5px 0 10px;}
 .product-name a {
     color: #282d3b;
-    font-family: 'Poppins';
+    font-family: 'Montserrat';
     font-size: 14px;
     letter-spacing: 0.005em;
     font-weight: 400;
@@ -83,20 +83,20 @@ h2.filter-title {
     margin: 12px 0 12px;
 }
 .regular-price .price {
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-size: 18px;
     letter-spacing: 0.005em;
     color: #2b2b2d;
     font-weight: 400;
 }
 .special-price .price {
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-size: 18px;
     color: #ff0000;
     font-weight: 400;
 }
 .old-price .price {
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     color: #2b2b2d;
     font-size: 14px;
     font-weight: 400;
@@ -117,7 +117,7 @@ a.addtocart i.icon-cart:before {
 .item .details-area .actions a.addtocart {
     text-transform: uppercase;
     font-size: 12.53px;
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-weight: 400;
     letter-spacing: 0.025em;
     color: #6f6e6c;
@@ -365,7 +365,7 @@ a.addtowishlist,a.comparelink {
     padding: 10px 20px;
     background-color: #010204;
     color: #fff;
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     text-transform: uppercase;
     border-radius: 2px;
     margin-top: 31px;
@@ -570,7 +570,7 @@ a.addtowishlist,a.comparelink {
     text-align: center;
 }
 .add-to-cart .qty {
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     display: inline-block;
     vertical-align: middle;
     height: 43px;
@@ -613,7 +613,7 @@ a.addtowishlist,a.comparelink {
 .add-to-cart button.button span {
     height: 43px;
     text-transform: uppercase;
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-size: 14px;
     letter-spacing: 0.05em;
     font-weight: 400;
@@ -868,7 +868,7 @@ a.addtowishlist:hover, .link-wishlist:hover, a.comparelink:hover, .link-compare:
     margin-bottom: 15px;
 }
 .footer-middle .block .block-title strong,.footer-top .block .block-title strong {
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.075em;
@@ -974,7 +974,7 @@ a.addtowishlist:hover, .link-wishlist:hover, a.comparelink:hover, .link-compare:
     line-height: 1;
 }
 .footer-middle .subcribe .block-title strong {
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.075em;
