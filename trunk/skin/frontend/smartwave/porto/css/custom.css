@@ -43,6 +43,26 @@ body,
 {
   margin:0;
 }
+/*===UTILITIES / HELPER ====*/
+
+.img-responsive
+{
+    display: block;
+    max-width: 100%;
+    width: auto;
+}
+.mb-1{
+    margin-bottom: 1rem;
+}
+.mb-2
+{
+    margin-bottom: 2rem;
+}
+.mb-5
+{
+    margin-bottom:5rem;
+}
+
 /*==CUSTOM STYLE===*/
 
 .btn-default:hover, .btn-default:focus {
