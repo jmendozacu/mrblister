@@ -416,14 +416,14 @@ var i = 0;
                                     <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
                                 <?php endif; ?>
                                 <div class="qty-field">
-                                    <label for="qty"><?php echo $this->__('Qty:') ?></label>
                                     <div class="qty-holder">
-                                        <input type="text" name="qty" id="qty_<?php echo $_product->getId(); ?>" maxlength="12" value="<?php echo $product->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-                                        <div class="qty-changer">
-                                            <a href="javascript:void(0)" class="qty_inc"><i class="icon-up-dir"></i></a>
-                                            <a href="javascript:void(0)" class="qty_dec"><i class="icon-down-dir"></i></a>
-                                        </div>
-                            </div>
+                                        <?php $maxQty = 9;?>
+                                        <select class="form-control" name="qty" id="qty_<?php echo $_product->getId(); ?>" >
+                                            <?php for($i = 1; $i <= $maxQty; $i++) { ?>
+                                                <option value-"<?php echo $i;?>"><?php echo $i;?></option>
+                                            <?php } ?>                                           
+                                        </select>
+                                    </div>
                         </div>
                     <?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>
                                 </form>

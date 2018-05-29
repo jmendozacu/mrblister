@@ -206,6 +206,7 @@ jQuery(function($){
     $(".table_qty_inc").unbind('click').click(function(){
 		if($(this).parent().children(".qty").is(':enabled'))
         	$(this).parent().children(".qty").val((+$(this).parent().children(".qty").val()+1) || 0);
+
     });
     $(".table_qty_dec").unbind('click').click(function(){
 		if($(this).parent().children(".qty").is(':enabled'))
@@ -213,11 +214,21 @@ jQuery(function($){
     });
     
     $(".qty_inc").unbind('click').click(function(){
+        
 		if($(this).parent().parent().children("input.qty").is(':enabled')){
+         
 			$(this).parent().parent().children("input.qty").val((+$(this).parent().parent().children("input.qty").val() + 1) || 0);
 			$(this).parent().parent().children("input.qty").focus();
 			$(this).focus();
+             var qty_input = $(this).parent().parent().children("input.qty").val();
+            if(qty_input > 9)
+            {
+                  console.log(qty_input);
+            }
 		}
+
+
+      
     });
     $(".qty_dec").unbind('click').click(function(){
 		if($(this).parent().parent().children("input.qty").is(':enabled')){
