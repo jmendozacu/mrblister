@@ -1,18 +1,104 @@
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php 
+    $disc_price = $_product->getFinalPrice();
+    $orig_price = $_product->getPrice();
+    $is_bulk    = $_product->getBoxType();
+
+?>
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <label for="qty"><?php echo $this->__('Qty:') ?></label>
         <div class="qty-holder">
-            <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-            <div class="qty-changer">
-                <a href="javascript:void(0)" class="qty_inc"><i class="icon-up-dir"></i></a>
-                <a href="javascript:void(0)" class="qty_dec"><i class="icon-down-dir"></i></a>
-            </div>
+        <select name="qty" id="qty" class="custom_qty_view" 
+         <?php if($is_bulk == 'Bulk'){  ?>
+            onkeypress="validateqty(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
+            onchange="validateqty(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)" 
+         <?php }else{ ?> 
+            onkeypress="validateqty2(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
+            onchange="validateqty2(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
+         
+         <?php } ?>
+     >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">more</option>
+     </select>
         </div>
         <?php endif; ?>
-        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><i class="icon-cart"></i><?php echo $buttonTitle ?></span></span></button>
+        <button type="button" id="cartbtn" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><i class="icon-cart"></i><?php echo $buttonTitle ?></span></span></button>
         <?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>
+
+<script>
+    function validateqty(val,id,disc,orig){
+        var price_cont_custom = document.getElementById('product-price-' + id);
+        var t = jQuery.noConflict();
+        if(val < 5){
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn").style.background = "#d80000";
+        } else if(val == 10) {
+            var w  = 549;
+            var h = 242;
+            var left = (window.screen.width / 2) - ((w / 2) + 10);
+            var top = (window.screen.height / 2) - ((h / 2) + 50);
+            
+            var win = window.open("https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg", "_blank", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=549, height=242 , top="+top+", left="+left+"");
+
+            if(win.document) { 
+                win.document.write('<html><head><title>Mister Blister</title></head><body height="100%" width="100%"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg" height="100%" width="100%" /></body></html>');
+            } 
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn").disabled = "true";
+            document.getElementById("cartbtn").style.background = "gray";
+            
+        } else { 
+            var disc_price = ' £' + disc.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn").style.background = "#d80000";
+        }
+        
+        price_cont_custom.innerHTML  = 'Box Price: <span class="price">' + disc_price + '</span>' ;
+    }
+    
+    function validateqty2(val,id,disc,orig){
+        var price_cont_custom = document.getElementById('product-price-' + id);
+        var t = jQuery.noConflict();
+        if(val < 5){
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn").style.background = "#d80000";
+        } else if(val == 10) {
+            var w  = 549;
+            var h = 242;
+            var left = (window.screen.width / 2) - ((w / 2) + 10);
+            var top = (window.screen.height / 2) - ((h / 2) + 50);
+            
+            var win = window.open("https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg", "_blank", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=549, height=242 , top="+top+", left="+left+"");
+
+            if(win.document) { 
+                win.document.write('<html><head><title>Mister Blister</title></head><body height="100%" width="100%"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg" height="100%" width="100%" /></body></html>');
+            } 
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn").disabled = "true";
+            document.getElementById("cartbtn").style.background = "gray";
+            
+        } else { 
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn").removeAttribute("disabled");
+            jQuery('.add-to-cart button.button span').css("background","gray");
+        }
+        
+        price_cont_custom.innerHTML  = 'Box Price: <span class="price">' + disc_price + '</span>' ;
+    }
+ </script>
