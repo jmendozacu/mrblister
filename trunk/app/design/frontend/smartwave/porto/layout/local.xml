@@ -43,6 +43,7 @@
             <action method="addCss" ifconfig="porto_settings/optimization/animate" condition="1"><stylesheet>css/animate.css</stylesheet></action>
             <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/porto.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.matchHeight.js</name></action>
             <action method="addJs" ifconfig="porto_settings/optimization/bootstrap" condition="1"><script>smartwave/popper/umd/popper.min.js</script></action>
             <action method="addJs" ifconfig="porto_settings/optimization/bootstrap" condition="1"><script>smartwave/bootstrap/js/bootstrap.min.js</script></action>
             

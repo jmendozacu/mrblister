@@ -23,6 +23,7 @@
     if(!$ratio_height)
         $ratio_height = 400;
 ?>
+
 <?php
 $_coreHelper = $this->helper('core');
 ?>
@@ -40,7 +41,7 @@ var i = 0;
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 </div>
 <?php else: ?>
-<div class="category-products">
+<div class="category-products matchHeight">
     <?php echo $this->getToolbarHtml() ?>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
@@ -48,7 +49,7 @@ var i = 0;
     <ol class="products-list" id="products-list">
     <?php foreach ($_productCollection as $_product): ?>
 	<?php $product = $_product;//Mage::getModel('catalog/product')->load($_product->getId()); ?>
-        <li class="item"><div class="item-area">
+        <li class="item"><div class="item-area matchItem">
                 <div class="product-image-area">
                     <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
                     <?php
@@ -258,7 +259,7 @@ var i = 0;
     <ul class="products-grid <?php if(Mage::getStoreConfig("porto_settings/category_grid/flex_grid",$code)):?>flex-grid<?php endif; ?> columns<?php echo $_columnCount; ?><?php if(!Mage::getStoreConfig("porto_settings/category_grid/show_addtolinks", $code)):?> hide-addtolinks<?php endif; ?><?php if(!Mage::getStoreConfig("porto_settings/category_grid/show_addtocart", $code)):?> hide-addtocart<?php endif; ?><?php if(Mage::getStoreConfig("porto_settings/category_grid/move_actions", $code)):?> move-action<?php endif; ?>">
     <?php $i=0; foreach ($_productCollection as $_product): ?>
 	<?php $product = $_product;//Mage::getModel('catalog/product')->load($_product->getId()); ?>
-            <li class="item"><div class="item-area">
+            <li class="item"><div class="item-area ">
             <div class="product-image-area">
                     <div class="loader-container">
                         <div class="loader">
@@ -376,7 +377,7 @@ var i = 0;
                         }
                     ?>
                 </div>
-                <div class="details-area">
+                <div class="details-area matchItem">
                     <?php if(!Mage::getStoreConfig("porto_settings/category_grid/move_title", $code)):?>
                     <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
                     <?php endif;?>
@@ -410,6 +411,13 @@ var i = 0;
                     <div class="actions">
                         <?php if(Mage::getStoreConfig("porto_settings/category/qty_field", $code)):?>
                             <?php if($product->isSaleable()): ?>
+                                <?php 
+
+                                    $disc_price = $_product->getFinalPrice();
+                                    $orig_price = $_product->getPrice();
+                                    $is_bulk    = $_product->getBoxType();
+                                    print_r(  $is_bulk);
+                                ?>
                                 <?php  if ( !($product->getTypeInstance(true)->hasOptions($product) || $product->isGrouped()) ) :  ?>
                                 <?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>
                                 <form id="addtocart_form_<?php echo $_product->getId(); ?>" action="<?php echo $this->getAddToCartUrl($_product) ?>" method="post">
@@ -417,11 +425,23 @@ var i = 0;
                                 <?php endif; ?>
                                 <div class="qty-field">
                                     <div class="qty-holder">
+                                        <div class="mb-1">
+                                     <label for="qty"><?php echo $this->__('Number of boxes') ?>:</label>
+                                     </div>
                                         <?php $maxQty = 9;?>
-                                        <select class="form-control" name="qty" id="qty_<?php echo $_product->getId(); ?>" >
+                                        <select class="form-control" name="qty" id="qty_<?php echo $_product->getId(); ?>" <?php if($is_bulk == 'Bulk'){  ?>
+                                onkeypress="validateqty(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
+                                onchange="validateqty(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)" 
+                             <?php }else{ ?> 
+                                onkeypress="validateqty2(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
+                                onchange="validateqty2(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
+                             
+                             <?php } ?>
+                         >
                                             <?php for($i = 1; $i <= $maxQty; $i++) { ?>
-                                                <option value-"<?php echo $i;?>"><?php echo $i;?></option>
-                                            <?php } ?>                                           
+                                                <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                            <?php } ?>
+                                            <option value="10"><?php echo $this->__('more');?></option>                                           
                                         </select>
                                     </div>
                         </div>
@@ -436,9 +456,9 @@ var i = 0;
                         <?php endif; ?>
                         <?php if($product->isSaleable()): ?>
                             <?php  if ( !($product->getTypeInstance(true)->hasOptions($product)/*$_product->getData('has_options')*/ || $product->isGrouped()) ) :  ?>
-                                <a href="<?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code) && !Mage::getStoreConfig("porto_settings/category/qty_field", $code)): ?><?php echo $this->getAddToCartUrl($_product) ?><?php else: ?>javascript:void(0)<?php endif; ?>" class="addtocart" title="<?php echo $this->__('Add to Cart') ?>" <?php if(Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>onclick="setLocationAjax(this,'<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId(); ?>')"<?php elseif(Mage::getStoreConfig("porto_settings/category/qty_field", $code)): ?>onclick="document.getElementById('addtocart_form_<?php echo $_product->getId(); ?>').submit()"<?php endif; ?>><i class="icon-cart"></i><span>&nbsp;<?php echo $this->__('Add to Cart') ?></span></a>
+                                <a id ="cartbtn_<?php echo $_product->getId(); ?>" href="<?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code) && !Mage::getStoreConfig("porto_settings/category/qty_field", $code)): ?><?php echo $this->getAddToCartUrl($_product) ?><?php else: ?>javascript:void(0)<?php endif; ?>" class="addtocart" title="<?php echo $this->__('Add to Cart') ?>" <?php if(Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>onclick="setLocationAjax(this,'<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId(); ?>')"<?php elseif(Mage::getStoreConfig("porto_settings/category/qty_field", $code)): ?>onclick="document.getElementById('addtocart_form_<?php echo $_product->getId(); ?>').submit()"<?php endif; ?>><i class="icon-cart"></i><span>&nbsp;<?php echo $this->__('Add to Cart') ?></span></a>
                             <?php else : ?>
-                                <a href="<?php if(Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>javascript:showOptions('<?php echo $_product->getId()?>')<?php else: ?><?php echo $this->getAddToCartUrl($_product) ?><?php endif; ?>" class="addtocart" title="<?php echo $this->__('Add to Cart') ?>"><i class="icon-cart"></i><span>&nbsp;<?php echo $this->__('Add to Cart') ?></span></a>
+                                <a id ="cartbtn_<?php echo $_product->getId(); ?>" href="<?php if(Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>javascript:showOptions('<?php echo $_product->getId()?>')<?php else: ?><?php echo $this->getAddToCartUrl($_product) ?><?php endif; ?>" class="addtocart" title="<?php echo $this->__('Add to Cart') ?>"><i class="icon-cart"></i><span>&nbsp;<?php echo $this->__('Add to Cart') ?></span></a>
                                 <a href='<?php echo $this->getUrl('ajaxcart/index/options',array('product_id'=>$_product->getId()));?>' class='fancybox' id='fancybox<?php echo $_product->getId()?>' style='display:none'>Options</a>
                             <?php endif;?>
                         <?php else: ?>
@@ -469,6 +489,8 @@ var i = 0;
             jQuery('.col-main .products-grid li:nth-child(7n+1)').addClass('nth-child-7np1');
             jQuery('.col-main .products-grid li:nth-child(8n)').addClass('nth-child-8n');
             jQuery('.col-main .products-grid li:nth-child(8n+1)').addClass('nth-child-8np1');
+
+
         </script>
     <?php endif; ?>
     <?php if(Mage::getStoreConfig("ajax_catalog/price_slider_settings/infinitescroll", $code)): ?>
@@ -479,3 +501,74 @@ var i = 0;
     </div>
 </div>
 <?php endif; ?>
+
+<script>
+    function validateqty(val,id,disc,orig){
+        var price_cont_custom = document.getElementById('product-price-' + id);
+        var t = jQuery.noConflict();
+        if(val < 5){
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn_" + id).style.background = "#d80000";
+        } else if(val == 10) {
+            var w  = 549;
+            var h = 242;
+            var left = (window.screen.width / 2) - ((w / 2) + 10);
+            var top = (window.screen.height / 2) - ((h / 2) + 50);
+            
+            var win = window.open("https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg", "_blank", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=549, height=242 , top="+top+", left="+left+"");
+
+            if(win.document) { 
+                win.document.write('<html><head><title>Mister Blister</title></head><body height="100%" width="100%"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg" height="100%" width="100%" /></body></html>');
+            } 
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).disabled = "true";
+            document.getElementById("cartbtn_" + id).style.background = "gray";
+            
+        } else { 
+            var disc_price = ' £' + disc.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn_" + id).style.background = "#d80000";
+        }
+        
+        price_cont_custom.innerHTML  = 'Box Price: <span class="price">' + disc_price + '</span>' ;
+    }
+    
+    function validateqty2(val,id,disc,orig){
+        var price_cont_custom = document.getElementById('product-price-' + id);
+        var t = jQuery.noConflict();
+        if(val < 5){
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn_" + id).style.background = "#d80000";
+        } else if(val == 10) {
+            var w  = 549;
+            var h = 242;
+            var left = (window.screen.width / 2) - ((w / 2) + 10);
+            var top = (window.screen.height / 2) - ((h / 2) + 50);
+            
+            var win = window.open("https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg", "_blank", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=549, height=242 , top="+top+", left="+left+"");
+
+            if(win.document) { 
+                win.document.write('<html><head><title>Mister Blister</title></head><body height="100%" width="100%"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg" height="100%" width="100%" /></body></html>');
+            } 
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).disabled = "true";
+            document.getElementById("cartbtn_" + id).style.background = "gray";
+            
+        } else { 
+            var disc_price = ' £' + orig.toFixed(2);
+            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
+            document.getElementById("cartbtn_" + id).style.background = "#d80000";
+        }
+        
+        price_cont_custom.innerHTML  = 'Box Price: <span class="price">' + disc_price + '</span>' ;
+    }
+
+
+    jQuery(document).ready(function(){
+        jQuery('.matchHeight').each(function() {
+          jQuery(this).find('.matchItem').matchHeight();
+        });
+    });
+ </script>
