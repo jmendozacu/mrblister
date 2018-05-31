@@ -648,7 +648,7 @@ a.addtowishlist,a.comparelink {
     display: inline-block;
     vertical-align: middle;
     height: 43px;
-    width: 44px!important;
+    width: 100%!important;
     font-size: 14px;
     font-weight: 400;
     text-align: center;

@@ -5,11 +5,18 @@
         <?php if(!$_product->isGrouped()): ?>
         <label for="qty"><?php echo $this->__('Qty:') ?></label>
         <div class="qty-holder">
-            <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-            <div class="qty-changer">
-                <a href="javascript:void(0)" class="qty_inc"><i class="icon-up-dir"></i></a>
-                <a href="javascript:void(0)" class="qty_dec"><i class="icon-down-dir"></i></a>
-            </div>
+            <select  name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">more</option>
+            </select>
         </div>
         <?php endif; ?>
         <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><i class="icon-cart"></i><?php echo $buttonTitle ?></span></span></button>
@@ -17,3 +24,31 @@
 		<?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>
+<script type="text/javascript">
+    jQuery(function($){
+        // This was built using https://stackoverflow.com/questions/12647770/ and https://himansuboity.wordpress.com/2014/09/30/magento-tip-how-to-get-the-store-price-format-by-javascript/
+        var inst_price_format = <?php echo Mage::helper('core')->jsonEncode( Mage::app()->getLocale()->getJsPriceFormat() ); ?>
+
+        var tierPrices = <?php echo json_encode($_product->getTierPrice()) ?>;
+
+        var getPrice = function(qty){
+            qty = Number(qty);
+            var i = tierPrices.length;
+            while(i--)
+            {
+                if(qty >= tierPrices[i]['price_qty']) { return tierPrices[i]['price']; }
+            }
+            return null;
+        };
+
+        var updatePrice = function(price, qty) { $('.price-box .price').html( formatCurrency( (price * qty), inst_price_format) ); };
+
+        $('#qty').change( function() {
+            var price = getPrice(this.value);
+            var qty = this.value;
+            if(price !== null) { updatePrice(price, qty); }
+            // no tier prices set, use base price
+            else { updatePrice(<?php echo $_product->getPrice(); ?>, qty); }
+        });
+    });
+</script>
