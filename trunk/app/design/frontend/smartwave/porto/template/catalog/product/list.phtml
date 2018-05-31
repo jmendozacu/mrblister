@@ -412,10 +412,7 @@ var i = 0;
                         <?php if(Mage::getStoreConfig("porto_settings/category/qty_field", $code)):?>
                             <?php if($product->isSaleable()): ?>
                                 <?php 
-
-                                    $disc_price = $_product->getFinalPrice();
-                                    $orig_price = $_product->getPrice();
-                                    $is_bulk    = $_product->getBoxType();
+                                    $product = Mage::getModel('catalog/product')->load($_product->getId());
                                 ?>
                                 <?php  if ( !($product->getTypeInstance(true)->hasOptions($product) || $product->isGrouped()) ) :  ?>
                                 <?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>
@@ -441,7 +438,7 @@ var i = 0;
                                             var inst_price_format = <?php echo Mage::helper('core')->jsonEncode( Mage::app()->getLocale()->getJsPriceFormat() ); ?>;
                                             var pricebox = $('#qty_<?php echo $_product->getId(); ?>').parent().parent().parent().parent().find('.regular-price .price');
                                             var cartbttn = $('#qty_<?php echo $_product->getId(); ?>').parent().parent().parent().parent().find('.addtocart');
-                                            var tierPrices = <?php echo json_encode($_product->getTierPrice()) ?>;
+                                            var tierPrices = <?php echo json_encode($product->getTierPrice()) ?>;
                                             var getPrice = function(qty){
                                                 qty = Number(qty);
                                                 var i = tierPrices.length;
@@ -452,10 +449,13 @@ var i = 0;
                                                 return null;
                                             };
 
-                                            var updatePrice = function(price, qty) { $(pricebox).html( formatCurrency( (price * qty), inst_price_format) ); };
+                                            var updatePrice = function(price, qty) { $(pricebox).html( formatCurrency( (price), inst_price_format) ); };
+
 
                                             $('#qty_<?php echo $_product->getId(); ?>').change( function() {
                                                 var price = getPrice(this.value);
+
+
                                                 var qty = this.value;
                                                 if(price !== null) { updatePrice(price, qty); }
                                                 // no tier prices set, use base price
