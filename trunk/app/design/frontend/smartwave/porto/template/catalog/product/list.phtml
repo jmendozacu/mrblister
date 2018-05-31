@@ -416,7 +416,6 @@ var i = 0;
                                     $disc_price = $_product->getFinalPrice();
                                     $orig_price = $_product->getPrice();
                                     $is_bulk    = $_product->getBoxType();
-                                    print_r(  $is_bulk);
                                 ?>
                                 <?php  if ( !($product->getTypeInstance(true)->hasOptions($product) || $product->isGrouped()) ) :  ?>
                                 <?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>
@@ -429,22 +428,42 @@ var i = 0;
                                      <label for="qty"><?php echo $this->__('Number of boxes') ?>:</label>
                                      </div>
                                         <?php $maxQty = 9;?>
-                                        <select class="form-control" name="qty" id="qty_<?php echo $_product->getId(); ?>" <?php if($is_bulk == 'Bulk'){  ?>
-                                onkeypress="validateqty(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
-                                onchange="validateqty(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)" 
-                             <?php }else{ ?> 
-                                onkeypress="validateqty2(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
-                                onchange="validateqty2(this.value, <?php echo $_product->getId(); ?>, <?php echo $disc_price; ?>, <?php echo $orig_price; ?>)"
-                             
-                             <?php } ?>
-                         >
+                                        <select class="form-control" name="qty" id="qty_<?php echo $_product->getId(); ?>">
                                             <?php for($i = 1; $i <= $maxQty; $i++) { ?>
                                                 <option value="<?php echo $i;?>"><?php echo $i;?></option>
                                             <?php } ?>
                                             <option value="10"><?php echo $this->__('more');?></option>                                           
                                         </select>
                                     </div>
-                        </div>
+                                    <script type="text/javascript">
+                                        jQuery(function($){
+                                            // This was built using https://stackoverflow.com/questions/12647770/ and https://himansuboity.wordpress.com/2014/09/30/magento-tip-how-to-get-the-store-price-format-by-javascript/
+                                            var inst_price_format = <?php echo Mage::helper('core')->jsonEncode( Mage::app()->getLocale()->getJsPriceFormat() ); ?>;
+                                            var pricebox = $('#qty_<?php echo $_product->getId(); ?>').parent().parent().parent().parent().find('.regular-price .price');
+                                            console.log(parent);
+                                            var tierPrices = <?php echo json_encode($_product->getTierPrice()) ?>;
+                                            var getPrice = function(qty){
+                                                qty = Number(qty);
+                                                var i = tierPrices.length;
+                                                while(i--)
+                                                {
+                                                    if(qty >= tierPrices[i]['price_qty']) { return tierPrices[i]['price']; }
+                                                }
+                                                return null;
+                                            };
+
+                                            var updatePrice = function(price, qty) { $(pricebox).html( formatCurrency( (price * qty), inst_price_format) ); };
+
+                                            $('#qty_<?php echo $_product->getId(); ?>').change( function() {
+                                                var price = getPrice(this.value);
+                                                var qty = this.value;
+                                                if(price !== null) { updatePrice(price, qty); }
+                                                // no tier prices set, use base price
+                                                else { updatePrice(<?php echo $_product->getPrice(); ?>, qty); }
+                                            });
+                                        });
+                                    </script>      
+                                </div>
                     <?php if(!Mage::getStoreConfig("ajaxcart/addtocart/enablecategory", $code)):?>
                                 </form>
                                 <?php endif; ?>
@@ -503,69 +522,6 @@ var i = 0;
 <?php endif; ?>
 
 <script>
-    function validateqty(val,id,disc,orig){
-        var price_cont_custom = document.getElementById('product-price-' + id);
-        var t = jQuery.noConflict();
-        if(val < 5){
-            var disc_price = ' £' + orig.toFixed(2);
-            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
-            document.getElementById("cartbtn_" + id).style.background = "#d80000";
-        } else if(val == 10) {
-            var w  = 549;
-            var h = 242;
-            var left = (window.screen.width / 2) - ((w / 2) + 10);
-            var top = (window.screen.height / 2) - ((h / 2) + 50);
-            
-            var win = window.open("https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg", "_blank", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=549, height=242 , top="+top+", left="+left+"");
-
-            if(win.document) { 
-                win.document.write('<html><head><title>Mister Blister</title></head><body height="100%" width="100%"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg" height="100%" width="100%" /></body></html>');
-            } 
-            var disc_price = ' £' + orig.toFixed(2);
-            document.getElementById("cartbtn_" + id).disabled = "true";
-            document.getElementById("cartbtn_" + id).style.background = "gray";
-            
-        } else { 
-            var disc_price = ' £' + disc.toFixed(2);
-            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
-            document.getElementById("cartbtn_" + id).style.background = "#d80000";
-        }
-        
-        price_cont_custom.innerHTML  = 'Box Price: <span class="price">' + disc_price + '</span>' ;
-    }
-    
-    function validateqty2(val,id,disc,orig){
-        var price_cont_custom = document.getElementById('product-price-' + id);
-        var t = jQuery.noConflict();
-        if(val < 5){
-            var disc_price = ' £' + orig.toFixed(2);
-            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
-            document.getElementById("cartbtn_" + id).style.background = "#d80000";
-        } else if(val == 10) {
-            var w  = 549;
-            var h = 242;
-            var left = (window.screen.width / 2) - ((w / 2) + 10);
-            var top = (window.screen.height / 2) - ((h / 2) + 50);
-            
-            var win = window.open("https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg", "_blank", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=549, height=242 , top="+top+", left="+left+"");
-
-            if(win.document) { 
-                win.document.write('<html><head><title>Mister Blister</title></head><body height="100%" width="100%"><img src="https://www.mr-blister.com/skin/frontend/gpmd/default/images/blister/bulk.jpg" height="100%" width="100%" /></body></html>');
-            } 
-            var disc_price = ' £' + orig.toFixed(2);
-            document.getElementById("cartbtn_" + id).disabled = "true";
-            document.getElementById("cartbtn_" + id).style.background = "gray";
-            
-        } else { 
-            var disc_price = ' £' + orig.toFixed(2);
-            document.getElementById("cartbtn_" + id).removeAttribute("disabled");
-            document.getElementById("cartbtn_" + id).style.background = "#d80000";
-        }
-        
-        price_cont_custom.innerHTML  = 'Box Price: <span class="price">' + disc_price + '</span>' ;
-    }
-
-
     jQuery(document).ready(function(){
         jQuery('.matchHeight').each(function() {
           jQuery(this).find('.matchItem').matchHeight();
