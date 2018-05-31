@@ -440,7 +440,7 @@ var i = 0;
                                             // This was built using https://stackoverflow.com/questions/12647770/ and https://himansuboity.wordpress.com/2014/09/30/magento-tip-how-to-get-the-store-price-format-by-javascript/
                                             var inst_price_format = <?php echo Mage::helper('core')->jsonEncode( Mage::app()->getLocale()->getJsPriceFormat() ); ?>;
                                             var pricebox = $('#qty_<?php echo $_product->getId(); ?>').parent().parent().parent().parent().find('.regular-price .price');
-                                            console.log(parent);
+                                            var cartbttn = $('#qty_<?php echo $_product->getId(); ?>').parent().parent().parent().parent().find('.addtocart');
                                             var tierPrices = <?php echo json_encode($_product->getTierPrice()) ?>;
                                             var getPrice = function(qty){
                                                 qty = Number(qty);
@@ -460,6 +460,16 @@ var i = 0;
                                                 if(price !== null) { updatePrice(price, qty); }
                                                 // no tier prices set, use base price
                                                 else { updatePrice(<?php echo $_product->getPrice(); ?>, qty); }
+
+                                                if(qty > 9)
+                                                {
+                                                    $('#bulk_popup').trigger('click');
+                                                    $(cartbttn).addClass('disable-bttn');
+                                                }
+                                                else{
+                                                   $(cartbttn).removeClass('disable-bttn');
+                                                }
+
                                             });
                                         });
                                     </script>      
@@ -520,11 +530,20 @@ var i = 0;
     </div>
 </div>
 <?php endif; ?>
-
+ <a id="bulk_popup" href="<?php echo $this->getSkinUrl('images/bulk.jpg');?>">
+ </a>
 <script>
     jQuery(document).ready(function(){
         jQuery('.matchHeight').each(function() {
           jQuery(this).find('.matchItem').matchHeight();
         });
+        jQuery("a#bulk_popup").fancybox({
+                'transitionIn'  :   'elastic',
+                'transitionOut' :   'elastic',
+                'speedIn'       :   600, 
+                'speedOut'      :   200, 
+                'overlayShow'   :   false
+            });
     });
  </script>
+
