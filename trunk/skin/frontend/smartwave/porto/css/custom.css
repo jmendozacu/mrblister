@@ -99,9 +99,13 @@ body,
   margin:0;
 }
 
+.open
+{
+    padding: 2rem 1.5rem;
+}
 .cathead {
     background: #FFFFFF;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
