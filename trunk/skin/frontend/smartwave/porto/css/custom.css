@@ -4,7 +4,16 @@ body,
 {
   font-family:'Montserrat',sans-serif!important;
 }
+.header-container.type20 .main-nav ul.menu>li>a
+{
+    padding-right: 25px;
+    padding-left: 25px;
 
+}
+.header-container.type20 .main-nav ul.menu>li>a:hover
+{
+    background:#f6f6f6;
+}
 /*======CATEGORY PAGE=====*/
 .category_description
 {
