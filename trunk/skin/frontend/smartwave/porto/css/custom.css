@@ -60,6 +60,11 @@ body,
     opacity: 1;
     text-decoration: none;
 }
+/*===PRODUCT PAGE====*/
+.tier-prices
+{
+    display: none!important;
+}
 /*====CHECKOUT======*/
 .block-progress dd
 {
