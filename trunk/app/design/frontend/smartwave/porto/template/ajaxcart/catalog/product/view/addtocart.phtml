@@ -41,7 +41,7 @@
             return null;
         };
 
-        var updatePrice = function(price, qty) { $('.price-box .price').html( formatCurrency( (price * qty), inst_price_format) ); };
+        var updatePrice = function(price, qty) { $('.price-box .price').html( formatCurrency( (price), inst_price_format) ); };
 
         $('#qty').change( function() {
             var price = getPrice(this.value);
