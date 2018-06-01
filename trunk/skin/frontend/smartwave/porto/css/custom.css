@@ -118,6 +118,16 @@ body,
     text-transform: uppercase;
     margin-bottom: 35px;
 }
+.cathead h2 {
+    font-weight: normal;
+    font-family: 'chunkfiveroman';
+    color: #003360;
+    padding: 0px;
+    margin: 0px;
+    font-size: 32px;
+    text-align: left;
+    line-height: 2.7rem;
+}
 .cms-page-view h3 {
     font-family: 'chunkfiveroman';
     font-weight: normal;
