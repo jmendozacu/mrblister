@@ -130,7 +130,7 @@ body,
 .cms-page-view h3 {
     font-family: 'chunkfiveroman';
     font-weight: normal;
-    padding: 1rem 1.5rem;
+    padding: 2rem 1rem;
     color: #263775;
     border-bottom: 1px solid #444444;
 }
@@ -149,7 +149,11 @@ body,
 .cms-page-view .sidewrap h5 {margin-bottom:30px;font-size:17px;font-family: 'chunkfiveroman';font-weight:normal;line-height:120%;}
 .cms-page-view .sidewrap h6 {color:#263775;margin-bottom:10px;font-size:20px;font-family: 'chunkfiveroman';font-weight:normal;line-height:120%;}
 .cms-page-view .sidewrap p strong {color:#333;}
-
+.miss p {
+    font-family: 'chunkfiveroman';
+    color: #263775;
+    font-size: 20px;
+}
 /*===UTILITIES / HELPER ====*/
 
 .nopadding{padding:0!important;}
