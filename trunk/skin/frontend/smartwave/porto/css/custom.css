@@ -86,7 +86,11 @@ body,
     opacity: 1;
     text-decoration: none;
 }
-
+.payment-logo ul li
+{
+   display: inline-block;
+   padding-right: 1.5rem;
+}
 
 /*===PRODUCT PAGE====*/
 .tier-prices
