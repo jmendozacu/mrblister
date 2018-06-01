@@ -24,6 +24,8 @@
 		<?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>
+ <a id="bulk_popup" href="<?php echo $this->getSkinUrl('images/bulk.jpg');?>">
+ </a>
 <script type="text/javascript">
     jQuery(function($){
         // This was built using https://stackoverflow.com/questions/12647770/ and https://himansuboity.wordpress.com/2014/09/30/magento-tip-how-to-get-the-store-price-format-by-javascript/
@@ -49,6 +51,24 @@
             if(price !== null) { updatePrice(price, qty); }
             // no tier prices set, use base price
             else { updatePrice(<?php echo $_product->getPrice(); ?>, qty); }
+                if(qty > 9)
+                {
+                    $('#bulk_popup').trigger('click');
+                    $('.btn-cart').attr("disabled", "disabled");
+                }
+                else{
+                   $('.btn-cart').removeAttr("disabled");
+                }
         });
     });
+    jQuery(document).ready(function(){
+        jQuery("a#bulk_popup").fancybox({
+            'transitionIn'  :   'elastic',
+            'transitionOut' :   'elastic',
+            'speedIn'       :   600, 
+            'speedOut'      :   200, 
+            'overlayShow'   :   false
+        });
+    });
+
 </script>
