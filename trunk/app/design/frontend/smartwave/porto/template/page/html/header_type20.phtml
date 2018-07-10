@@ -21,8 +21,10 @@
                 <?php echo $store_currency; ?>
                 <?php echo $store_language; ?>
                 <div class="top-links-area">
-                    <div class="top-links-icon"><a href="javascript:void(0)"><?php echo $this->__("links"); ?></a></div>
-                    <?php echo $this->getChildHtml('topLinks'); ?>
+                    <ul>
+                        <li><?php echo $this->__('Login'); ;?></li>
+                        <li><?php echo $this->__('Signup'); ;?></li>
+                    </ul>
                 </div>
                 <div class="clearer"></div>
             </div>
