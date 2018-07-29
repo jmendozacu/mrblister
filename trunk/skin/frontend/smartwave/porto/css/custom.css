@@ -82,6 +82,11 @@ body,
 .offer-deal .item .content .btn-default{
     background:#d12d26;
 }
+.offer-deal .item .content{
+    position: absolute;
+    bottom:15%;
+    left:40%;
+}
 .offer-deal .item .content h3>a:hover
 {
     background: #333;
