@@ -79,6 +79,9 @@ body,
     padding: 0 1.75rem;
     opacity: 0.9;
 }
+.offer-deal .item .content .btn-default{
+    background:#d12d26;
+}
 .offer-deal .item .content h3>a:hover
 {
     background: #333;
