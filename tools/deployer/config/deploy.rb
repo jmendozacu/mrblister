@@ -34,7 +34,7 @@ set :pty, true
 append :linked_dirs, 'trunk/var', 'trunk/media'
 
 # Default value for keep_releases is 5
-set :keep_releases, 3
+set :keep_releases, 1
 
 # Custom Capistrano Hooks
 
