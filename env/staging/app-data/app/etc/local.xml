@@ -41,9 +41,9 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[cellarwi_staging]]></username>
-                    <password><![CDATA[C!SdT_%5~4Xw]]></password>
-                    <dbname><![CDATA[cellarwi_staging]]></dbname>
+                    <username><![CDATA[mrbliste_dev]]></username>
+                    <password><![CDATA[v,)z*#5X3#h(]]></password>
+                    <dbname><![CDATA[mrbliste_dev]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
